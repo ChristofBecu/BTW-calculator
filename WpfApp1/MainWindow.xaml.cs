@@ -42,23 +42,25 @@ namespace WpfApp1
         private void BtnBereken_Click(object sender, RoutedEventArgs e)
         {
             int btwTarief = Convert.ToInt16(lstBtwTarieven.SelectedItem);
-            decimal nettoBedrag = Convert.ToDecimal(txtBedrag.Text.Replace('.',',');
+            decimal nettoBedrag = 0;
             decimal btw = 0;
             decimal brutoBedrag = 0;
 
             if (lstBtwInclExcl.SelectedItem == "exclusief")
-            { 
+            {
+                nettoBedrag = Convert.ToDecimal(txtBedrag.Text.Replace('.', ','));
                 btw = nettoBedrag / 100 * btwTarief;
                 brutoBedrag = nettoBedrag + btw;
             }
             if (lstBtwInclExcl.SelectedItem == "inclusief")
-            {  
+            {
+                brutoBedrag = Convert.ToDecimal(txtBedrag.Text.Replace('.', ','));
                 btw = brutoBedrag / (100 + btwTarief) * btwTarief ;
                 nettoBedrag = brutoBedrag / (100 + btwTarief) * 100;
             }
-            tbkBereken.Text = "netto : € " + nettoBedrag + "\n";
-            tbkBereken.Text += "btw " + btwTarief + "%: € " + btw + "\n";
-            tbkBereken.Text += "bruto : € " + brutoBedrag;
+            tbkBereken.Text = "netto : € " + Math.Round(nettoBedrag, 2) + "\n";
+            tbkBereken.Text += "btw " + btwTarief + "%: € " + Math.Round(btw, 2) + "\n";
+            tbkBereken.Text += "bruto : € " + Math.Round(brutoBedrag, 2);
         }
 
 
