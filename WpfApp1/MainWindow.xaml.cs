@@ -58,9 +58,9 @@ namespace WpfApp1
                 btw = brutoBedrag / (100 + btwTarief) * btwTarief ;
                 nettoBedrag = brutoBedrag / (100 + btwTarief) * 100;
             }
-            tbkBereken.Text = "netto : € " + Math.Round(nettoBedrag, 2) + "\n";
-            tbkBereken.Text += "btw " + btwTarief + "%: € " + Math.Round(btw, 2) + "\n";
-            tbkBereken.Text += "bruto : € " + Math.Round(brutoBedrag, 2);
+            lblNetto.Content = Math.Round(nettoBedrag, 2);
+            lblBTW.Content = Math.Round(btw, 2);
+            lblBruto.Content = Math.Round(brutoBedrag, 2);
         }
 
 
