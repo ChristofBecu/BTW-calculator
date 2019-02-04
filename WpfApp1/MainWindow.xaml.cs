@@ -39,6 +39,7 @@ namespace WpfApp1
             lstBtwTarieven.SelectedIndex = 0;
 
             txtBedrag.Focus();
+            txtBedrag.SelectAll();
         }
 
         private void BtnBereken_Click(object sender, RoutedEventArgs e)
