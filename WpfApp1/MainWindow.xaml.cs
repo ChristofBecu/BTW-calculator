@@ -37,6 +37,8 @@ namespace WpfApp1
 
             lstBtwInclExcl.SelectedIndex = 0;
             lstBtwTarieven.SelectedIndex = 0;
+
+            txtBedrag.Focus();
         }
 
         private void BtnBereken_Click(object sender, RoutedEventArgs e)
@@ -61,6 +63,9 @@ namespace WpfApp1
             lblNetto.Content = Math.Round(nettoBedrag, 2);
             lblBTW.Content = Math.Round(btw, 2);
             lblBruto.Content = Math.Round(brutoBedrag, 2);
+
+            txtBedrag.Text = "";
+            txtBedrag.Focus();
         }
 
 
