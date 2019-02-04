@@ -63,9 +63,9 @@ namespace WpfApp1
             lblNetto.Content = Math.Round(nettoBedrag, 2);
             lblBTW.Content = Math.Round(btw, 2);
             lblBruto.Content = Math.Round(brutoBedrag, 2);
-
-            txtBedrag.Text = "";
             txtBedrag.Focus();
+            txtBedrag.SelectAll();
+           
         }
 
 
