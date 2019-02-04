@@ -42,19 +42,19 @@ namespace WpfApp1
         private void BtnBereken_Click(object sender, RoutedEventArgs e)
         {
             int btwTarief = Convert.ToInt16(lstBtwTarieven.SelectedItem);
-            double nettoBedrag = 0;
-            double btw = 0;
-            double brutoBedrag = 0;
+            decimal nettoBedrag = 0;
+            decimal btw = 0;
+            decimal brutoBedrag = 0;
 
             if (lstBtwInclExcl.SelectedItem == "exclusief")
             {
-                nettoBedrag = Convert.ToDouble(txtBedrag.Text);      
+                nettoBedrag = Convert.ToDecimal(txtBedrag.Text);      
                 btw = nettoBedrag / 100 * btwTarief;
                 brutoBedrag = nettoBedrag + btw;
             }
             if (lstBtwInclExcl.SelectedItem == "inclusief")
             {
-                brutoBedrag = Convert.ToDouble(txtBedrag.Text);
+                brutoBedrag = Convert.ToDecimal(txtBedrag.Text);
                 btw = brutoBedrag / (100 + btwTarief) * btwTarief ;
                 nettoBedrag = brutoBedrag / (100 + btwTarief) * 100;
             }
@@ -63,9 +63,6 @@ namespace WpfApp1
             tbkBereken.Text += "bruto : € " + Math.Round(brutoBedrag, 2);
         }
 
-        private void LstBtwTarieven_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
-        }
     }
 }
