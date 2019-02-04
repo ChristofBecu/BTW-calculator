@@ -42,7 +42,7 @@ namespace WpfApp1
         private void BtnBereken_Click(object sender, RoutedEventArgs e)
         {
             int btwTarief = Convert.ToInt16(lstBtwTarieven.SelectedItem);
-            decimal nettoBedrag = Convert.ToDecimal(txtBedrag.Text);
+            decimal nettoBedrag = Convert.ToDecimal(txtBedrag.Text.Replace('.',',');
             decimal btw = 0;
             decimal brutoBedrag = 0;
 
